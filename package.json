@@ -2,7 +2,10 @@
   "name": "100tifiko",
   "version": "1.0.0",
   "description": "",
-  "scripts": {},
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --open --mode development"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/archbold09/platzi-javascript-singlepage-vanilla.git"
@@ -16,6 +19,7 @@
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "babel-loader": "^8.1.0",
+    "copy-webpack-plugin": "^6.2.1",
     "html-webpack-plugin": "^4.5.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
