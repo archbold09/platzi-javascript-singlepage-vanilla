@@ -21,6 +21,22 @@ module.exports = {
           loader: "babel-loader",
         },
       },
+      {
+        test: /\.css$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                ident: "postcss",
+                plugins: [require("tailwindcss"), require("autoprefixer")],
+              },
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -29,6 +45,8 @@ module.exports = {
       template: "./public/index.html",
       filename: "./index.html",
     }),
-    new CopyWebpackPlugin({patterns:[{ from: "./src/styles/style.css", to: "" }]}),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "./src/styles/style.css", to: "" }],
+    }),
   ],
 };
